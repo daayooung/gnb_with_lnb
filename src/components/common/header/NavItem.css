@@ -1,0 +1,17 @@
+.depth1 {
+  float: left;
+  width: 20%;
+  height: 100px;
+  padding-top: 18px;
+  text-align: center;
+}
+.depth1_link {
+  padding: 14px 0;
+}
+.depth1_link:hover {
+  border-bottom: 4px solid rgb(133, 0, 0);
+}
+
+.depth1_link.active {
+  border-bottom: 4px solid rgb(133, 0, 0);
+}

@@ -1,0 +1,42 @@
+{
+  "sitemap": [
+    {
+      "path": "/",
+      "pagename": "홈",
+      "depth2": []
+    },
+    {
+      "path": "/intro",
+      "pagename": "소개",
+      "depth2": []
+    },
+    {
+      "path": "/profiles",
+      "pagename": "등장인물",
+      "depth2": [
+        {
+          "path": "/harry",
+          "pagename": "해리포터"
+        },
+        {
+          "path": "/hermione",
+          "pagename": "헤르미온느"
+        },
+        {
+          "path": "/ron",
+          "pagename": "론위즐리"
+        }
+      ]
+    },
+    {
+      "path": "/series",
+      "pagename": "시리즈",
+      "depth2": []
+    },
+    {
+      "path": "/community",
+      "pagename": "커뮤니티",
+      "depth2": []
+    }
+  ]
+}

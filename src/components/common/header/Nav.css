@@ -1,0 +1,4 @@
+nav {
+  float: left;
+  width: calc(100% - 100px);
+}

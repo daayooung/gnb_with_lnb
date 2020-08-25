@@ -1,0 +1,20 @@
+.tab .tab_depth1 {
+  position: relative;
+  width: 50%;
+  float: left;
+  text-align: center;
+  background: rgb(59, 57, 0);
+}
+.tab .tab_depth1:hover {
+  background: rgb(42, 42, 1);
+}
+
+.tab .tab_depth1 + .tab_depth1 {
+  border-left: 1px solid rgb(0, 0, 0);
+}
+
+.tab .tab_depth1 .depth1_link {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+}
