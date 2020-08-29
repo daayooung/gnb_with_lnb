@@ -1,15 +1,15 @@
-import React from 'react';
-import Logo from './Logo';
-import Nav from './Nav';
-import './Header.css';
+import React from "react";
+import Logo from "./Logo";
+import Nav from "./Nav";
+import "./Header.css";
 
-const Header = () => {
-  return (
-    <header>
-      <Logo />
-      <Nav />
-    </header>
-  );
+const Header = ({ handleClickMenu }) => {
+    return (
+        <header>
+            <Logo />
+            <Nav handleClickMenu={handleClickMenu} />
+        </header>
+    );
 };
 
 export default Header;
