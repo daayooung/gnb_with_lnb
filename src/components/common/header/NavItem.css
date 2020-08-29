@@ -1,17 +1,25 @@
 .depth1 {
   float: left;
   width: 20%;
-  height: 100px;
+  height: 55px;
   padding-top: 18px;
   text-align: center;
 }
+
 .depth1_link {
+  display: block;
+}
+
+.depth1_link span {
   padding: 14px 0;
 }
-.depth1_link:hover {
+
+.depth1 .depth1_link:hover span {
+  color: #ceb8b8;
   border-bottom: 4px solid rgb(133, 0, 0);
 }
 
-.depth1_link.active {
+.depth1 .depth1_link.active span {
+  color: #ceb8b8;
   border-bottom: 4px solid rgb(133, 0, 0);
 }

@@ -1,5 +1,6 @@
 .depth2 {
   display: none;
+  width: 133px;
   margin-top: 19px;
   background: rgba(133, 0, 0, 0.85);
 }
@@ -18,11 +19,11 @@
 }
 
 .depth2 li a:hover {
-  color: #ecc5c5;
-  background: rgb(105, 0, 0);
+  color: #ceb8b8;
+  background: rgb(100, 0, 0);
 }
 
 .depth2 li a.active {
-  color: #ecc5c5;
-  background: rgb(105, 0, 0);
+  color: #ceb8b8;
+  background: rgb(100, 0, 0);
 }

@@ -1,12 +1,8 @@
 .tab .tab_depth1 {
-  position: relative;
   width: 50%;
   float: left;
   text-align: center;
-  background: rgb(59, 57, 0);
-}
-.tab .tab_depth1:hover {
-  background: rgb(42, 42, 1);
+  background: rgba(133, 0, 0, 0.7);
 }
 
 .tab .tab_depth1 + .tab_depth1 {

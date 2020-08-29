@@ -2,13 +2,9 @@
   float: left;
   width: 12.5%;
   text-align: center;
-  font-size: 0.85rem;
-  background: rgb(59, 57, 0);
+  font-size: 0.78rem;
+  background: rgba(133, 0, 0, 0.7);
   border-top: 1px solid rgb(0, 0, 0);
-}
-
-.tab .tab_depth2:hover {
-  background: rgb(42, 42, 1);
 }
 
 .tab_depth2 + .tab_depth2 {

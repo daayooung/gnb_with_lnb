@@ -13,8 +13,6 @@ const Contents = ({ history }) => {
     .flat();
   let depth2Data = depth2.filter((data) => data.path === currentPage);
 
-  console.log({ currentPage, depth2, depth2Data });
-
   let initData;
   if (!subNav) {
     initData = depth1Data;
