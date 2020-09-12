@@ -6,6 +6,7 @@ const Board = () => {
   return (
     <div>
       <BoardEditor />
+      <div>보드</div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from '../../api/Data.json';
+import { data } from '../../../api/Data.json';
 import './Contents.css';
 
 const Contents = ({ history }) => {
@@ -24,7 +24,7 @@ const Contents = ({ history }) => {
     <div className="contents">
       {currentPage === '/' && (
         <img
-          src={require('../../images/hogwart_mark.png')}
+          src={require('../../..//images/hogwart_mark.png')}
           alt="호그와트 마크"
         ></img>
       )}

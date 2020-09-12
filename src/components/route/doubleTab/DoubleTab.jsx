@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { series } from '../../api/SeriesData.json';
+import { series } from '../../../api/SeriesData.json';
 import TabDepth1 from './TabDepth1';
 import TabDepth2 from './TabDepth2';
 import './DoubleTab.css';
