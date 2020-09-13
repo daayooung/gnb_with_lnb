@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/common/header/Header';
 import Sidebar from './components/common/sidebar/Sidebar';
@@ -11,13 +11,54 @@ import './App.css';
 
 function App() {
   const navInfo = sitemap;
+  // LNB
   const [selectedMenu, setSelectedMenu] = useState('');
-
-  // 메뉴 클릭시
   const handleClickMenu = (path) => {
     setSelectedMenu(path);
   };
   console.log(selectedMenu);
+
+  // Board
+  const createdTime = new Date().toString();
+  const [boardData, setBoardData] = useState([
+    {
+      number: 1,
+      userName: '해리',
+      title: '해리입니다.',
+      contents: '팬 여러분 반가워요.',
+      date: 'Sun Sep 12 2020 15:10:28 GMT+0900 (대한민국 표준시)'
+    },
+    {
+      number: 2,
+      userName: '헤르미온느',
+      title: '헤르미온느입니다.',
+      contents: '여러분 안녕.',
+      date: 'Sun Sep 13 2020 14:10:28 GMT+0900 (대한민국 표준시)'
+    },
+    {
+      number: 3,
+      userName: '론위즐리',
+      title: '론위즐리입니다.',
+      contents: '안녕안녕!.',
+      date: 'Sun Sep 13 2020 15:09:28 GMT+0900 (대한민국 표준시)'
+    }
+  ]);
+
+  const nextNumber = useRef(4);
+  const onInsert = useCallback(
+    (userName, title, contents) => {
+      const data = {
+        number: nextNumber.current,
+        userName,
+        title,
+        contents,
+        date: createdTime
+      };
+      setBoardData(boardData.concat(data));
+      nextNumber.current += 1;
+    },
+    [boardData]
+  );
 
   return (
     <div className="App">
@@ -28,6 +69,7 @@ function App() {
           <section className="section">
             {/* {toggleSidebar && <Sidebar />} */}
             {selectedMenu === '/profiles' && <Sidebar />}
+
             <Switch>
               <Route
                 path="/"
@@ -61,7 +103,13 @@ function App() {
               <Route
                 path="/community"
                 render={({ match, history }) => (
-                  <Board navInfo={navInfo} match={match} history={history} />
+                  <Board
+                    navInfo={navInfo}
+                    match={match}
+                    history={history}
+                    boardData={boardData}
+                    onInsert={onInsert}
+                  />
                 )}
               />
               <Route
