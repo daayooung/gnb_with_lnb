@@ -31,9 +31,9 @@ const Board = ({ boardData, onInsert }) => {
       </button>
       {editorOpen && (
         <BoardEditor
-          onInsert={onInsert}
           onWritebtnClick={onWritebtnClick}
           onDeletebtnClick={onDeletebtnClick}
+          onInsert={onInsert}
         />
       )}
     </div>

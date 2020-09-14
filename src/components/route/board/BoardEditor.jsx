@@ -1,12 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import './BoardEditor.css';
-// onSubmit을 누르면 e.preventDefault();로 새로고침 방지, 입력 내용의 value값을 각 setUserName, setContents, setTitle 로 설정한다.
-const BoardEditor = ({
-  onInsert,
-  editorOpen,
-  onWritebtnClick,
-  onDeletebtnClick
-}) => {
+
+const BoardEditor = ({ onInsert, onWritebtnClick, onDeletebtnClick }) => {
   const [userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
@@ -32,6 +27,7 @@ const BoardEditor = ({
       setUserName('');
       setTitle('');
       setContents('');
+      console.log('서브밋');
     },
     [onInsert, userName, title, contents]
   );
@@ -55,8 +51,8 @@ const BoardEditor = ({
       <button
         className="btn btn_write"
         type="submit"
-        value="submit"
-        onClick={(e) => onWritebtnClick(e)}
+        value="write"
+        onClick={(e) => onWritebtnClick(e, onSubmit(e))}
       >
         작성
       </button>
