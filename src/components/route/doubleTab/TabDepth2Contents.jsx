@@ -2,7 +2,11 @@ import React from 'react';
 import './TabDepth2Contents.css';
 
 const TabDepth2Contents = ({ tab2Contents }) => {
-  return <p className="depth2_contents">{tab2Contents.contents}</p>;
+  return (
+    <div className="depth2_contents">
+      <p>{tab2Contents.contents}</p>
+    </div>
+  );
 };
 
 export default TabDepth2Contents;

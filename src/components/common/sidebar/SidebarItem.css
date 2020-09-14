@@ -1,19 +1,19 @@
-.sidebar_depth1_link {
+.sidebar_depth1 .depth1_link {
   display: block;
+  width: 100%;
   padding: 18px 0;
-  font-weight: bolder;
 }
 
-.sidebar_depth1_link span {
+.sidebar_depth1 .depth1_link span {
   padding-bottom: 4px;
 }
 
-.sidebar_depth1_link:hover span {
+.sidebar_depth1 .depth1_link:hover span {
   color: #b8a5a5;
   border-bottom: 3px solid rgb(133, 0, 0);
 }
 
-.sidebar_depth1_link.active span {
+.sidebar_depth1 .depth1_link.active span {
   color: #b8a5a5;
   border-bottom: 3px solid rgb(133, 0, 0);
 }

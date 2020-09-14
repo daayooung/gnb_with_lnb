@@ -2,7 +2,7 @@ import React from 'react';
 import { data } from '../../../api/Data.json';
 import './Contents.css';
 
-const Contents = ({ history }) => {
+const Contents = ({ history, selectedMenu }) => {
   let currentPage = history.location.pathname;
   const subNav = history.location.pathname.split('/')[2];
 
@@ -21,7 +21,7 @@ const Contents = ({ history }) => {
   }
 
   return (
-    <div className="contents">
+    <div className={selectedMenu ? 'contents sidebar_contents' : 'contents'}>
       {currentPage === '/' && (
         <img
           src={require('../../..//images/hogwart_mark.png')}

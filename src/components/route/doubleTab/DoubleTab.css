@@ -1,22 +1,22 @@
 .tab {
   position: relative;
+  color: black;
   float: right;
-  width: calc(100% - 128px);
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 30px);
+  margin-top: 30px;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.05rem;
 }
 
 .active_depth {
-  background: rgb(83, 0, 0);
-}
-
-.tab li:hover {
-  background: rgb(83, 0, 0);
+  background: rgb(56, 54, 54);
 }
 
 .tab a:hover {
-  color: #e2b8b8;
+  color: #ceb8b8;
 }
 
 .tab a.active_depth {
-  color: #e2b8b8;
+  color: #ceb8b8;
 }

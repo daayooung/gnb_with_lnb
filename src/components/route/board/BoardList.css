@@ -1,0 +1,33 @@
+.board_list {
+  text-align: center;
+}
+
+.board_list_sort {
+  height: 40px;
+  padding-top: 10px;
+  border-bottom: 2px solid white;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.05rem;
+}
+
+.board_list ul li {
+  float: left;
+}
+
+.list_sort_number {
+  width: 5%;
+}
+
+.list_sort_title {
+  width: 70%;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.list_sort_userName {
+  width: 15%;
+}
+
+.list_sort_createdTime {
+  width: 10%;
+}

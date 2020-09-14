@@ -1,22 +1,41 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import BoardList from './BoardList';
 import BoardEditor from './BoardEditor';
 import './Board.css';
 
 const Board = ({ boardData, onInsert }) => {
-  const [modal, setModal] = useState(false);
-  const onClickEditBtn = (e) => {
+  const [editorOpen, setEditorOpen] = useState(false);
+
+  const onEditbtnClick = (e) => {
     e.preventDefault();
-    setModal(true);
+    setEditorOpen(true);
+  };
+
+  const onWritebtnClick = (e) => {
+    e.preventDefault();
+    setEditorOpen(false);
+  };
+
+  const onDeletebtnClick = (e) => {
+    e.preventDefault();
+    window.confirm('정말로 삭제 하시겠습니까?')
+      ? setEditorOpen(false)
+      : setEditorOpen(true);
   };
 
   return (
-    <div>
+    <div className="board">
       <BoardList boardData={boardData} />
-      <button className="btn_edit" onClick={(e) => onClickEditBtn(e)}>
+      <button className="btn_edit" onClick={(e) => onEditbtnClick(e)}>
         글쓰기
       </button>
-      {modal && <BoardEditor onInsert={onInsert} />}
+      {editorOpen && (
+        <BoardEditor
+          onInsert={onInsert}
+          onWritebtnClick={onWritebtnClick}
+          onDeletebtnClick={onDeletebtnClick}
+        />
+      )}
     </div>
   );
 };

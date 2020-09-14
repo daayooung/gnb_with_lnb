@@ -2,15 +2,24 @@
   width: 50%;
   float: left;
   text-align: center;
-  background: rgba(133, 0, 0, 0.7);
+  background: rgb(100, 0, 0);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.tab .tab_depth1 + .tab_depth1 {
-  border-left: 1px solid rgb(0, 0, 0);
-}
-
-.tab .tab_depth1 .depth1_link {
+.tab_depth1 .depth1_link {
   display: inline-block;
   width: 100%;
   padding: 10px 0;
+}
+
+.tab .depth1_link:hover {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: rgb(56, 54, 54);
+}
+
+.tab .depth1_link.active_depth {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }

@@ -87,7 +87,12 @@ function App() {
               <Route
                 path="/profiles"
                 render={({ match, history }) => (
-                  <Contents navInfo={navInfo} match={match} history={history} />
+                  <Contents
+                    navInfo={navInfo}
+                    match={match}
+                    history={history}
+                    selectedMenu={selectedMenu}
+                  />
                 )}
               />
               <Route

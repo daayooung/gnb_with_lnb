@@ -2,17 +2,21 @@
   float: left;
   width: 12.5%;
   text-align: center;
-  font-size: 0.78rem;
-  background: rgba(133, 0, 0, 0.7);
-  border-top: 1px solid rgb(0, 0, 0);
+  font-size: 0.9rem;
+  background: rgb(100, 0, 0);
+  border-top: 0.5px solid rgb(108, 89, 89);
 }
 
 .tab_depth2 + .tab_depth2 {
-  border-left: 1px solid rgb(0, 0, 0);
+  border-left: 1px solid rgb(108, 89, 89);
 }
 
-.tab .tab_depth2 .depth2_link {
+.tab_depth2 .depth2_link {
   display: inline-block;
   width: 100%;
   padding: 5px 0;
+}
+
+.depth2_link:hover {
+  background: rgb(56, 54, 54);
 }

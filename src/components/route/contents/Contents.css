@@ -1,8 +1,13 @@
 .contents {
   float: right;
-  width: calc(100% - 128px);
+  width: 100%;
+  height: 100%;
   line-height: 1.9rem;
   padding: 30px 25px;
+}
+
+.sidebar_contents {
+  width: calc(100% - 128px);
 }
 
 img {

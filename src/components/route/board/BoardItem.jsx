@@ -29,13 +29,14 @@ const BoardItem = ({ data }) => {
     return `${Math.floor(betweenTimeDay / 365)}년 전`;
   };
   return (
-    <div className="board_item">
-      <p className="item_number">{number}</p>
-      <p className="item_title">{title}</p>
-      <p className="item_username">{userName}</p>
-      <p className="item_createdTime">{ElapsedTime()}</p>
-      <hr />
-    </div>
+    <li className="board_item">
+      <ul>
+        <li className="item_number">{number}</li>
+        <li className="item_title">{title}</li>
+        <li className="item_username">{userName}</li>
+        <li className="item_createdTime">{ElapsedTime()}</li>
+      </ul>
+    </li>
   );
 };
 

@@ -1,0 +1,48 @@
+.board_form {
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  height: 100%;
+  padding: 30px 25px;
+  background: rgb(0, 0, 0);
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.05rem;
+}
+
+.label {
+  padding-bottom: 5px;
+  display: block;
+}
+
+.board_form input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  background: white;
+  outline: none;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.contents_textarea {
+  width: 100%;
+  height: 350px;
+  padding: 10px 5px;
+  background: white;
+  outline: none;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.btn {
+  top: 510px;
+}
+
+.btn_write {
+  right: 23px;
+}
+
+.btn_delete {
+  right: 68px;
+}

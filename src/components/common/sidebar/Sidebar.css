@@ -3,6 +3,8 @@
   width: 128px;
   height: 100%;
   padding-top: 40px;
-  text-align: center;
   border-right: 1px solid antiquewhite;
+  text-align: center;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 1.05rem;
 }
