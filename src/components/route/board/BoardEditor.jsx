@@ -1,11 +1,30 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import './BoardEditor.css';
 
-const BoardEditor = ({ onInsert, onWritebtnClick, onDeletebtnClick }) => {
+const BoardEditor = ({
+  onInsert,
+  onRemove,
+  onWritebtnClick,
+  onDeletebtnClick,
+  initText
+}) => {
   const [userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
 
+  useEffect(() => {
+    console.log('first init call', initText);
+    setUserName(initText.userName);
+    setTitle(initText.title);
+    setContents(initText.contents);
+  }, [initText]);
+
+  const onUserNameChange = useCallback(
+    (e) => {
+      setUserName(e.target.value);
+    },
+    [userName]
+  );
   const onTitleChange = useCallback(
     (e) => {
       setTitle(e.target.value);
@@ -34,13 +53,14 @@ const BoardEditor = ({ onInsert, onWritebtnClick, onDeletebtnClick }) => {
 
   return (
     <form className="board_form" onSubmit={onSubmit}>
-      <label className="label">제목</label>
+      <label className="label">작성자</label>
       <input
-        className="title_input"
-        value={title}
-        onChange={onTitleChange}
+        value={userName}
+        onChange={onUserNameChange}
         autoComplete="off"
       ></input>
+      <label className="label">제목</label>
+      <input value={title} onChange={onTitleChange} autoComplete="off"></input>
       <label className="label">내용</label>
       <textarea
         className="contents_textarea"

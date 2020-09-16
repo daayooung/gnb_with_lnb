@@ -19,6 +19,7 @@ function App() {
   console.log(selectedMenu);
 
   // Board
+  // 생성
   const createdTime = new Date().toString();
   const [boardData, setBoardData] = useState([
     {
@@ -56,6 +57,35 @@ function App() {
       };
       setBoardData(boardData.concat(data));
       nextNumber.current += 1;
+    },
+    [boardData]
+  );
+
+  // 수정
+  const [initText, setinitText] = useState({
+    number: '',
+    userName: '',
+    title: '',
+    contents: ''
+  });
+  const [editorOpenToModify, setEditorOpenToModify] = useState(false);
+
+  const onModifyClick = useCallback((e, number, userName, title, contents) => {
+    e.preventDefault();
+    setinitText({ number, userName, title, contents });
+    setEditorOpenToModify(true);
+  });
+
+  console.log(initText);
+  // const onModify = useCallback(number=> {
+  //   setBoardData(boardData.map(data=> data.number === number? ...data))
+  // }
+  //   );
+
+  // 삭제
+  const onRemove = useCallback(
+    (number) => {
+      setBoardData(boardData.filter((data) => data.number !== number));
     },
     [boardData]
   );
@@ -114,6 +144,10 @@ function App() {
                     history={history}
                     boardData={boardData}
                     onInsert={onInsert}
+                    onRemove={onRemove}
+                    editorOpenToModify={editorOpenToModify}
+                    initText={initText}
+                    onModifyClick={onModifyClick}
                   />
                 )}
               />

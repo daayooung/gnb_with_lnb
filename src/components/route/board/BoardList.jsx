@@ -2,8 +2,7 @@ import React from 'react';
 import BoardItem from './BoardItem';
 import './BoardList.css';
 
-const BoardList = ({ boardData }) => {
-  console.log(boardData);
+const BoardList = ({ boardData, onModifyClick, onRemove }) => {
   return (
     <ul className="board_list">
       <li className="board_list_sort">
@@ -19,7 +18,12 @@ const BoardList = ({ boardData }) => {
           return new Date(b.number) - new Date(a.number);
         })
         .map((data) => (
-          <BoardItem data={data} key={data.number} />
+          <BoardItem
+            data={data}
+            key={data.number}
+            onModifyClick={onModifyClick}
+            onRemove={onRemove}
+          />
         ))}
     </ul>
   );

@@ -6,3 +6,13 @@
 ```
  onClick={(e) => onWritebtnClick(e, onSubmit(e))}
 ```
+
+#
+
+```
+  const onModifyClick = useCallback((e, number, userName, title, contents) => {
+    e.preventDefault();
+    setinitText({ number, userName, title, contents });
+    setEditorOpenToModify(true);
+  });
+```

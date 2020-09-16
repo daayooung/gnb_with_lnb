@@ -1,6 +1,6 @@
 .board_form {
   position: absolute;
-  top: 0px;
+  top: 267px;
   width: 100%;
   height: 100%;
   padding: 30px 25px;
@@ -36,7 +36,7 @@
 }
 
 .btn {
-  top: 510px;
+  top: 589px;
 }
 
 .btn_write {
