@@ -6,6 +6,7 @@ import './Board.css';
 const Board = ({
   boardData,
   onInsert,
+  onModify,
   onRemove,
   initText,
   editorOpenToModify,
@@ -23,13 +24,6 @@ const Board = ({
     setEditorOpen(false);
   }, []);
 
-  const onDeletebtnClick = useCallback((e) => {
-    e.preventDefault();
-    window.confirm('정말로 삭제 하시겠습니까?')
-      ? setEditorOpen(false)
-      : setEditorOpen(true);
-  }, []);
-
   return (
     <div className="board">
       <BoardList boardData={boardData} onModifyClick={onModifyClick} />
@@ -39,10 +33,10 @@ const Board = ({
       {(editorOpen || editorOpenToModify) && (
         <BoardEditor
           onWritebtnClick={onWritebtnClick}
-          onDeletebtnClick={onDeletebtnClick}
           onInsert={onInsert}
-          onRemove={onRemove}
           initText={initText}
+          onModify={onModify}
+          onRemove={onRemove}
         />
       )}
     </div>

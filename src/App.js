@@ -19,7 +19,7 @@ function App() {
   console.log(selectedMenu);
 
   // Board
-  // 생성
+  // Board 생성
   const createdTime = new Date().toString();
   const [boardData, setBoardData] = useState([
     {
@@ -61,7 +61,7 @@ function App() {
     [boardData]
   );
 
-  // 수정
+  // Board 수정
   const [initText, setinitText] = useState({
     number: '',
     userName: '',
@@ -77,15 +77,27 @@ function App() {
   });
 
   console.log(initText);
-  // const onModify = useCallback(number=> {
-  //   setBoardData(boardData.map(data=> data.number === number? ...data))
-  // }
-  //   );
+  const onModify = useCallback((number, title, contents) => {
+    setBoardData(
+      boardData.map((data) =>
+        data.number === number
+          ? { ...data, title: title, contents: contents }
+          : data
+      )
+    );
+    setEditorOpenToModify(false);
+  });
 
-  // 삭제
+  // Board 삭제
   const onRemove = useCallback(
     (number) => {
-      setBoardData(boardData.filter((data) => data.number !== number));
+      console.log('받아온 삭제할 번호: ' + number);
+      if (window.confirm('정말로 삭제 하시겠습니까?')) {
+        setBoardData(boardData.filter((data) => data.number !== number));
+        setEditorOpenToModify(false);
+      } else {
+        setEditorOpenToModify(true);
+      }
     },
     [boardData]
   );
@@ -144,10 +156,11 @@ function App() {
                     history={history}
                     boardData={boardData}
                     onInsert={onInsert}
-                    onRemove={onRemove}
                     editorOpenToModify={editorOpenToModify}
                     initText={initText}
                     onModifyClick={onModifyClick}
+                    onModify={onModify}
+                    onRemove={onRemove}
                   />
                 )}
               />

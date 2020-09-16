@@ -3,17 +3,20 @@ import './BoardEditor.css';
 
 const BoardEditor = ({
   onInsert,
+  initText,
+  onModify,
   onRemove,
-  onWritebtnClick,
-  onDeletebtnClick,
-  initText
+  onWritebtnClick
 }) => {
+  const number = initText.number;
+  console.log('삭제할 번호: ' + number);
+
   const [userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
 
   useEffect(() => {
-    console.log('first init call', initText);
+    // console.log('first init call', initText);
     setUserName(initText.userName);
     setTitle(initText.title);
     setContents(initText.contents);
@@ -46,7 +49,6 @@ const BoardEditor = ({
       setUserName('');
       setTitle('');
       setContents('');
-      console.log('서브밋');
     },
     [onInsert, userName, title, contents]
   );
@@ -72,7 +74,11 @@ const BoardEditor = ({
         className="btn btn_write"
         type="submit"
         value="write"
-        onClick={(e) => onWritebtnClick(e, onSubmit(e))}
+        onClick={
+          number
+            ? (e) => onModify(e, onSubmit(e, title, contents))
+            : (e) => onWritebtnClick(e, onSubmit(e))
+        }
       >
         작성
       </button>
@@ -80,7 +86,7 @@ const BoardEditor = ({
         className="btn btn_delete"
         type="submit"
         value="delete"
-        onClick={(e) => onDeletebtnClick(e)}
+        onClick={(e) => onRemove(number)}
       >
         삭제
       </button>

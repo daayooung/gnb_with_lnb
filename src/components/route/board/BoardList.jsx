@@ -2,7 +2,7 @@ import React from 'react';
 import BoardItem from './BoardItem';
 import './BoardList.css';
 
-const BoardList = ({ boardData, onModifyClick, onRemove }) => {
+const BoardList = ({ boardData, onModifyClick }) => {
   return (
     <ul className="board_list">
       <li className="board_list_sort">
@@ -22,7 +22,6 @@ const BoardList = ({ boardData, onModifyClick, onRemove }) => {
             data={data}
             key={data.number}
             onModifyClick={onModifyClick}
-            onRemove={onRemove}
           />
         ))}
     </ul>
