@@ -2,21 +2,19 @@ import React, { useState, useCallback, useEffect } from 'react';
 import './BoardEditor.css';
 
 const BoardEditor = ({
-  onInsert,
   initText,
+  onWriteClick,
+  onInsert,
   onModify,
-  onRemove,
-  onWritebtnClick
+  onRemoveClick
 }) => {
   const number = initText.number;
-  console.log('삭제할 번호: ' + number);
 
   const [userName, setUserName] = useState('');
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
 
   useEffect(() => {
-    // console.log('first init call', initText);
     setUserName(initText.userName);
     setTitle(initText.title);
     setContents(initText.contents);
@@ -76,8 +74,8 @@ const BoardEditor = ({
         value="write"
         onClick={
           number
-            ? (e) => onModify(e, onSubmit(e, title, contents))
-            : (e) => onWritebtnClick(e, onSubmit(e))
+            ? (e) => onModify(number, title, contents, onSubmit(e))
+            : (e) => onWriteClick(e, onSubmit(e))
         }
       >
         작성
@@ -86,7 +84,7 @@ const BoardEditor = ({
         className="btn btn_delete"
         type="submit"
         value="delete"
-        onClick={(e) => onRemove(number)}
+        onClick={() => onRemoveClick(number)}
       >
         삭제
       </button>

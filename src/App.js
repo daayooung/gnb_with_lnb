@@ -20,7 +20,7 @@ function App() {
 
   // Board
   // Board 생성
-  const createdTime = new Date().toString();
+  const [editorOpen, setEditorOpen] = useState(false);
   const [boardData, setBoardData] = useState([
     {
       number: 1,
@@ -45,7 +45,16 @@ function App() {
     }
   ]);
 
-  const nextNumber = useRef(4);
+  const nextNumber = useRef(boardData.length + 1);
+  const createdTime = new Date().toString();
+  const [initText, setinitText] = useState({
+    number: '',
+    userName: '',
+    title: '',
+    contents: ''
+  });
+
+  // Board 작성
   const onInsert = useCallback(
     (userName, title, contents) => {
       const data = {
@@ -61,42 +70,49 @@ function App() {
     [boardData]
   );
 
-  // Board 수정
-  const [initText, setinitText] = useState({
-    number: '',
-    userName: '',
-    title: '',
-    contents: ''
-  });
-  const [editorOpenToModify, setEditorOpenToModify] = useState(false);
+  // ---글쓰기btn---//
+  const onEditClick = useCallback((e) => {
+    e.preventDefault();
+    setEditorOpen(true);
+    setinitText({ number: '', userName: '', title: '', contents: '' });
+  }, []);
 
+  // ---작성btn---//
+  const onWriteClick = useCallback((e) => {
+    e.preventDefault();
+    setEditorOpen(false);
+  }, []);
+
+  // Board 수정
   const onModifyClick = useCallback((e, number, userName, title, contents) => {
     e.preventDefault();
     setinitText({ number, userName, title, contents });
-    setEditorOpenToModify(true);
-  });
+    setEditorOpen(true);
+  }, []);
 
-  console.log(initText);
-  const onModify = useCallback((number, title, contents) => {
-    setBoardData(
-      boardData.map((data) =>
-        data.number === number
-          ? { ...data, title: title, contents: contents }
-          : data
-      )
-    );
-    setEditorOpenToModify(false);
-  });
+  const onModify = useCallback(
+    (number, title, contents) => {
+      console.log(number);
+      setBoardData(
+        boardData.map((data) =>
+          data.number === number
+            ? { ...data, title: title, contents: contents }
+            : data
+        )
+      );
+      setEditorOpen(false);
+    },
+    [boardData]
+  );
 
   // Board 삭제
-  const onRemove = useCallback(
+  const onRemoveClick = useCallback(
     (number) => {
-      console.log('받아온 삭제할 번호: ' + number);
       if (window.confirm('정말로 삭제 하시겠습니까?')) {
         setBoardData(boardData.filter((data) => data.number !== number));
-        setEditorOpenToModify(false);
+        setEditorOpen(false);
       } else {
-        setEditorOpenToModify(true);
+        setEditorOpen(true);
       }
     },
     [boardData]
@@ -155,12 +171,14 @@ function App() {
                     match={match}
                     history={history}
                     boardData={boardData}
-                    onInsert={onInsert}
-                    editorOpenToModify={editorOpenToModify}
+                    editorOpen={editorOpen}
                     initText={initText}
+                    onEditClick={onEditClick}
+                    onInsert={onInsert}
+                    onWriteClick={onWriteClick}
                     onModifyClick={onModifyClick}
                     onModify={onModify}
-                    onRemove={onRemove}
+                    onRemoveClick={onRemoveClick}
                   />
                 )}
               />

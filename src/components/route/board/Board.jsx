@@ -5,38 +5,28 @@ import './Board.css';
 
 const Board = ({
   boardData,
-  onInsert,
-  onModify,
-  onRemove,
+  editorOpen,
   initText,
-  editorOpenToModify,
-  onModifyClick
+  onEditClick,
+  onInsert,
+  onWriteClick,
+  onModifyClick,
+  onModify,
+  onRemoveClick
 }) => {
-  const [editorOpen, setEditorOpen] = useState(false);
-
-  const onEditbtnClick = useCallback((e) => {
-    e.preventDefault();
-    setEditorOpen(true);
-  }, []);
-
-  const onWritebtnClick = useCallback((e) => {
-    e.preventDefault();
-    setEditorOpen(false);
-  }, []);
-
   return (
     <div className="board">
       <BoardList boardData={boardData} onModifyClick={onModifyClick} />
-      <button className="btn_edit" onClick={(e) => onEditbtnClick(e)}>
+      <button className="btn_edit" onClick={(e) => onEditClick(e)}>
         글쓰기
       </button>
-      {(editorOpen || editorOpenToModify) && (
+      {editorOpen && (
         <BoardEditor
-          onWritebtnClick={onWritebtnClick}
-          onInsert={onInsert}
           initText={initText}
+          onWriteClick={onWriteClick}
+          onInsert={onInsert}
           onModify={onModify}
-          onRemove={onRemove}
+          onRemoveClick={onRemoveClick}
         />
       )}
     </div>

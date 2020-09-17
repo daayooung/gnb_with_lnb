@@ -28,6 +28,7 @@ const BoardItem = ({ data, onModifyClick }) => {
 
     return `${Math.floor(betweenTimeDay / 365)}년 전`;
   };
+
   return (
     <li
       className="board_item"
