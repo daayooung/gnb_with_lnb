@@ -17,9 +17,11 @@ const BoardList = ({ boardData, onModifyClick }) => {
         .sort((a, b) => {
           return new Date(b.number) - new Date(a.number);
         })
-        .map((data) => (
+        .map((data, index) => (
           <BoardItem
+            boardData={boardData}
             data={data}
+            index={index}
             key={data.number}
             onModifyClick={onModifyClick}
           />

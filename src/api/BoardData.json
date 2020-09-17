@@ -1,0 +1,46 @@
+{
+  "board_Data": [
+    {
+      "number": 1,
+      "userName": "해리",
+      "title": "해리입니다.",
+      "contents": "팬 여러분 반가워요.",
+      "date": "Sun Sep 13 2020 10:10:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 2,
+      "userName": "헤르미온느",
+      "title": "헤르미온느입니다.",
+      "contents": "여러분 안녕.",
+      "date": "Sun Sep 13 2020 14:10:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 3,
+      "userName": "론위즐리",
+      "title": "론위즐리입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 14 2020 15:09:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 4,
+      "userName": "해그리드",
+      "title": "해그리드입니다.",
+      "contents": "팬 여러분 반가워요.",
+      "date": "Sun Sep 14 2020 17:10:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 5,
+      "userName": "덤블도어",
+      "title": "덤블도어입니다.",
+      "contents": "여러분 안녕.",
+      "date": "Sun Sep 15 2020 14:10:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 6,
+      "userName": "세베루스 스네이프",
+      "title": "세베루스 스네이프입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 15 2020 15:09:28 GMT+0900 (대한민국 표준시)"
+    }
+  ]
+}

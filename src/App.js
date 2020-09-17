@@ -7,6 +7,7 @@ import NotFound from './components/route/NotFound';
 import DoubleTab from './components/route/doubleTab/DoubleTab';
 import Board from './components/route/board/Board';
 import { sitemap } from './api/Sitemap.json';
+import { board_Data } from './api/BoardData.json';
 import './App.css';
 
 function App() {
@@ -21,29 +22,7 @@ function App() {
   // Board
   // Board 생성
   const [editorOpen, setEditorOpen] = useState(false);
-  const [boardData, setBoardData] = useState([
-    {
-      number: 1,
-      userName: '해리',
-      title: '해리입니다.',
-      contents: '팬 여러분 반가워요.',
-      date: 'Sun Sep 12 2020 15:10:28 GMT+0900 (대한민국 표준시)'
-    },
-    {
-      number: 2,
-      userName: '헤르미온느',
-      title: '헤르미온느입니다.',
-      contents: '여러분 안녕.',
-      date: 'Sun Sep 13 2020 14:10:28 GMT+0900 (대한민국 표준시)'
-    },
-    {
-      number: 3,
-      userName: '론위즐리',
-      title: '론위즐리입니다.',
-      contents: '안녕안녕!.',
-      date: 'Sun Sep 13 2020 15:09:28 GMT+0900 (대한민국 표준시)'
-    }
-  ]);
+  const [boardData, setBoardData] = useState(board_Data);
 
   const nextNumber = useRef(boardData.length + 1);
   const createdTime = new Date().toString();
