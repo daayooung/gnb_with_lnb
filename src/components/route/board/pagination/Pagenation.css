@@ -1,0 +1,26 @@
+.pagination {
+  position: absolute;
+  top: 325px;
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.pagination ul {
+  margin: 0 auto;
+}
+
+.page_item {
+  display: inline-block;
+}
+
+.page_item .page_link {
+  display: inline-block;
+  padding: 7px;
+}
+
+.pagination .page_link:hover span {
+  color: #ceb8b8;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ceb8b8;
+}

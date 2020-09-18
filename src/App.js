@@ -5,24 +5,23 @@ import Sidebar from './components/common/sidebar/Sidebar';
 import Contents from './components/route/contents/Contents';
 import NotFound from './components/route/NotFound';
 import DoubleTab from './components/route/doubleTab/DoubleTab';
-import Board from './components/route/board/Board';
+import Board from './components/route/board/board/Board';
 import { sitemap } from './api/Sitemap.json';
-import { board_Data } from './api/BoardData.json';
+import { board_data } from './api/BoardData.json';
 import './App.css';
 
 function App() {
   const navInfo = sitemap;
   // LNB
   const [selectedMenu, setSelectedMenu] = useState('');
-  const handleClickMenu = (path) => {
+  const onNavProfilesClick = (path) => {
     setSelectedMenu(path);
   };
-  console.log(selectedMenu);
 
   // Board
   // Board 생성
   const [editorOpen, setEditorOpen] = useState(false);
-  const [boardData, setBoardData] = useState(board_Data);
+  const [boardData, setBoardData] = useState(board_data);
 
   const nextNumber = useRef(boardData.length + 1);
   const createdTime = new Date().toString();
@@ -71,7 +70,6 @@ function App() {
 
   const onModify = useCallback(
     (number, title, contents) => {
-      console.log(number);
       setBoardData(
         boardData.map((data) =>
           data.number === number
@@ -97,15 +95,36 @@ function App() {
     [boardData]
   );
 
+  // Pagenation
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
+
+  // Get current posts
+  const boardDataReverse = boardData.sort((a, b) => {
+    return new Date(b.number) - new Date(a.number);
+  });
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = boardDataReverse.slice(
+    indexOfFirstPost,
+    indexOfLastPost
+  );
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="App">
       <div className="wrap">
         <div className="container">
           {/* <Header /> */}
-          <Header handleClickMenu={handleClickMenu} />
+          <Header onNavProfilesClick={onNavProfilesClick} />
           <section className="section">
             {/* {toggleSidebar && <Sidebar />} */}
-            {selectedMenu === '/profiles' && <Sidebar />}
+            {(selectedMenu === '/profiles' ||
+              selectedMenu === '/harry' ||
+              selectedMenu === '/hermione' ||
+              selectedMenu === '/ron') && <Sidebar />}
 
             <Switch>
               <Route
@@ -158,6 +177,10 @@ function App() {
                     onModifyClick={onModifyClick}
                     onModify={onModify}
                     onRemoveClick={onRemoveClick}
+                    posts={currentPosts}
+                    totalPosts={boardData.length}
+                    postsPerPage={postsPerPage}
+                    paginate={paginate}
                   />
                 )}
               />

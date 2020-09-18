@@ -61,3 +61,7 @@
 # onClick event의 parameter
 
 onClick의 유일한 paramater(매개변수)는 e(event)이다. 다른 것은 전달할 수 없다.
+
+# 게시글 Numbering
+
+https://kor2u.tistory.com/entry/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EA%B8%80%EB%B2%88%ED%98%B8-%EB%8F%99%EC%A0%81%EC%9C%BC%EB%A1%9C-%EA%B3%84%EC%82%B0%ED%95%B4%EC%84%9C-%EC%B6%9C%EB%A0%A5

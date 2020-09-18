@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavSub.css';
 
-const NavSub = ({ depth1Path, navInfo }) => {
+const NavSub = ({ depth1Path, navInfo, onNavProfilesClick }) => {
   return (
     <ul className="depth2">
       {navInfo.map((depth2) => {
@@ -15,6 +15,7 @@ const NavSub = ({ depth1Path, navInfo }) => {
               activeClassName="active"
               to={depth1Path + depth2Path}
               exact
+              onClick={() => onNavProfilesClick(depth2Path)}
             >
               {depth2Pagename}
             </NavLink>

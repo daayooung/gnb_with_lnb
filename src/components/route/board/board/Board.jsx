@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import BoardList from './BoardList';
+import Pagination from '../pagination/Pagination';
 import BoardEditor from './BoardEditor';
 import './Board.css';
 
@@ -12,14 +13,26 @@ const Board = ({
   onWriteClick,
   onModifyClick,
   onModify,
-  onRemoveClick
+  onRemoveClick,
+  posts,
+  postsPerPage,
+  paginate
 }) => {
   return (
     <div className="board">
-      <BoardList boardData={boardData} onModifyClick={onModifyClick} />
+      <BoardList
+        boardData={boardData}
+        onModifyClick={onModifyClick}
+        posts={posts}
+      />
       <button className="btn_edit" onClick={(e) => onEditClick(e)}>
         글쓰기
       </button>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={boardData.length}
+        paginate={paginate}
+      />
       {editorOpen && (
         <BoardEditor
           initText={initText}

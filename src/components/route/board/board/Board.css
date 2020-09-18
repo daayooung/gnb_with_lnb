@@ -1,9 +1,11 @@
 .board {
   height: 100%;
+  width: 100%;
   padding-top: 30px;
   position: relative;
 }
 
 .btn_edit {
-  margin-top: 20px;
+  position: absolute;
+  top: 325px;
 }

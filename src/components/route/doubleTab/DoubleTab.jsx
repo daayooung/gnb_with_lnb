@@ -9,7 +9,6 @@ const DoubleTabContents = () => {
   const [tab2, settab2] = useState();
   const [tab2Contents, settab2Contents] = useState();
 
-  // console.log(series, depth2Data);
   const onClickDepth1 = (e) => {
     let currentTab1 = series.find(
       (series) => e.currentTarget.pathname === series.path
@@ -18,16 +17,11 @@ const DoubleTabContents = () => {
   };
 
   const onClickDepth2 = (e) => {
-    // console.log(e.currentTarget.pathname);
-    // console.log(depth2Data.map((data) => data.path));
     let currentTab2 = depth2Data.filter(
       (data) => e.currentTarget.pathname === data.path
     );
-    console.log(currentTab2);
     settab2Contents(currentTab2);
   };
-
-  // console.log(tab2Contents);
 
   return (
     <div className="tab">

@@ -2,7 +2,7 @@ import React from 'react';
 import BoardItem from './BoardItem';
 import './BoardList.css';
 
-const BoardList = ({ boardData, onModifyClick }) => {
+const BoardList = ({ boardData, onModifyClick, posts }) => {
   return (
     <ul className="board_list">
       <li className="board_list_sort">
@@ -13,16 +13,17 @@ const BoardList = ({ boardData, onModifyClick }) => {
           <li className="list_sort_createdTime">작성일</li>
         </ul>
       </li>
-      {boardData
+      {posts
         .sort((a, b) => {
           return new Date(b.number) - new Date(a.number);
         })
-        .map((data, index) => (
+        .map((post, index) => (
           <BoardItem
             boardData={boardData}
-            data={data}
+            posts={posts}
+            post={post}
             index={index}
-            key={data.number}
+            key={post.number}
             onModifyClick={onModifyClick}
           />
         ))}

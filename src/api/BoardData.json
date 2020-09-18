@@ -1,9 +1,9 @@
 {
-  "board_Data": [
+  "board_data": [
     {
       "number": 1,
-      "userName": "해리",
-      "title": "해리입니다.",
+      "userName": "해리포터",
+      "title": "해리포터입니다.",
       "contents": "팬 여러분 반가워요.",
       "date": "Sun Sep 13 2020 10:10:28 GMT+0900 (대한민국 표준시)"
     },
@@ -37,10 +37,80 @@
     },
     {
       "number": 6,
-      "userName": "세베루스 스네이프",
-      "title": "세베루스 스네이프입니다.",
+      "userName": "스네이프",
+      "title": "스네이프입니다.",
       "contents": "안녕안녕!.",
       "date": "Sun Sep 15 2020 15:09:28 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 7,
+      "userName": "시리우스",
+      "title": "시리우스입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 15 2020 15:09:29 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 8,
+      "userName": "도비",
+      "title": "도비입니다.",
+      "contents": "팬 여러분 반가워요.",
+      "date": "Sun Sep 15 2020 15:09:30 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 9,
+      "userName": "두들리",
+      "title": "두들리입니다.",
+      "contents": "여러분 안녕.",
+      "date": "Sun Sep 15 2020 15:09:35 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 10,
+      "userName": "맥고나걸",
+      "title": "맥고나걸입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 15 2020 15:09:37 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 11,
+      "userName": "말포이",
+      "title": "말포이입니다.",
+      "contents": "팬 여러분 반가워요.",
+      "date": "Sun Sep 15 2020 15:09:50 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 12,
+      "userName": "그린델왈드",
+      "title": "그린델왈드입니다.",
+      "contents": "여러분 안녕.",
+      "date": "Sun Sep 15 2020 15:15:30 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 13,
+      "userName": "제임스 포터",
+      "title": "재임스 포터입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 15 2020 15:17:30 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 14,
+      "userName": "릴리 포터",
+      "title": "릴리 포터입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 16 2020 15:09:30 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 15,
+      "userName": "프레드 위즐리",
+      "title": "프레드 위즐리입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 16 2020 17:09:30 GMT+0900 (대한민국 표준시)"
+    },
+    {
+      "number": 16,
+      "userName": "조지 위즐리",
+      "title": "조지 위즐리입니다.",
+      "contents": "안녕안녕!.",
+      "date": "Sun Sep 16 2020 17:09:31 GMT+0900 (대한민국 표준시)"
     }
   ]
 }
