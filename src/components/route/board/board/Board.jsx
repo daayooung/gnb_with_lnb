@@ -16,6 +16,7 @@ const Board = ({
   onRemoveClick,
   posts,
   postsPerPage,
+  currentPage,
   paginate
 }) => {
   return (
@@ -24,6 +25,8 @@ const Board = ({
         boardData={boardData}
         onModifyClick={onModifyClick}
         posts={posts}
+        currentPage={currentPage}
+        postsPerPage={postsPerPage}
       />
       <button className="btn_edit" onClick={(e) => onEditClick(e)}>
         글쓰기

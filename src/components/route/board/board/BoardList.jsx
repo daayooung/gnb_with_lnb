@@ -1,8 +1,9 @@
 import React from 'react';
 import BoardItem from './BoardItem';
 import './BoardList.css';
+// 
+const BoardList = ({ boardData, onModifyClick, posts, currentPage, postsPerPage }) => {
 
-const BoardList = ({ boardData, onModifyClick, posts }) => {
   return (
     <ul className="board_list">
       <li className="board_list_sort">
@@ -17,14 +18,12 @@ const BoardList = ({ boardData, onModifyClick, posts }) => {
         .sort((a, b) => {
           return new Date(b.number) - new Date(a.number);
         })
-        .map((post, index) => (
+        .map((post,i) => (
           <BoardItem
-            boardData={boardData}
-            posts={posts}
             post={post}
-            index={index}
             key={post.number}
             onModifyClick={onModifyClick}
+            index={boardData.length - ((currentPage-1) * postsPerPage)-i}
           />
         ))}
     </ul>

@@ -180,6 +180,7 @@ function App() {
                     posts={currentPosts}
                     totalPosts={boardData.length}
                     postsPerPage={postsPerPage}
+                    currentPage={currentPage}
                     paginate={paginate}
                   />
                 )}

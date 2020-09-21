@@ -1,7 +1,7 @@
 import React from 'react';
 import './BoardItem.css';
 
-const BoardItem = ({ boardData, posts, post, index, onModifyClick }) => {
+const BoardItem = ({ post, onModifyClick, index}) => {
   const { number, title, userName, contents, date } = post;
 
   const ElapsedTime = () => {
@@ -29,14 +29,13 @@ const BoardItem = ({ boardData, posts, post, index, onModifyClick }) => {
     return `${Math.floor(betweenTimeDay / 365)}년 전`;
   };
 
-  return (
+  return ( 
     <li
       className="board_item"
       onClick={(e) => onModifyClick(e, number, userName, title, contents)}
     >
       <ul>
-        {/* boardData - (boardData.map(v,i => i))  */}
-        <li className="item_number">{number}</li>
+        <li className="item_number">{index}</li>
         <li className="item_title">{title}</li>
         <li className="item_username">{userName}</li>
         <li className="item_createdTime">{ElapsedTime()}</li>
